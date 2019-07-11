@@ -88,8 +88,18 @@ public class HYParentalGate: NSObject, HYParentalGateViewDelegate, UIGestureReco
         overlay?.backgroundColor = UIColor(white: 0.4, alpha: 0.6)
         overlay?.tag = overlayTag
         
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(HYParentalGate.handleTapOutsideDialog))
+        tapRecognizer.delegate = self
+        overlay?.addGestureRecognizer(tapRecognizer)
+
         window.addSubview(overlay!)
     }
+    
+    @objc fileprivate func handleTapOutsideDialog() {
+//        cancelHandler()
+//        hide()
+    }
+
     
     fileprivate func calculateParentalGateFrame() -> CGRect {
         let widthCoeff: CGFloat
