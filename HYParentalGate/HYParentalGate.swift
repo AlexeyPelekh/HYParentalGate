@@ -96,8 +96,8 @@ public class HYParentalGate: NSObject, HYParentalGateViewDelegate, UIGestureReco
     }
     
     @objc fileprivate func handleTapOutsideDialog() {
-//        cancelHandler()
-//        hide()
+        cancelHandler()
+        hide()
     }
 
     
